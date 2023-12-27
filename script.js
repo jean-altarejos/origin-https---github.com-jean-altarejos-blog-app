@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
+app.get("/create", (req, res) => {
+    res.render("create.ejs");
+});
+
 app.post("/submit", (req, res) => {
     console.log(req.body);
 });

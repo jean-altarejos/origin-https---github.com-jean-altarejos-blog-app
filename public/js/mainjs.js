@@ -1,8 +1,14 @@
-$('#mainclass').on("click", function(){
-    $.ajax({
-        url: "/create",
-        success: function (result){
-            $('div').html("success")
-        }
+$(document).ready(function(){
+    
+    
+    $('.cta').on("click", function(){
+        console.log("I am clicked!");
+        $.ajax({
+            url: "/create",
+            type : "get",
+            success : function() {
+                location.href='/create';
+            }
+        });
     });
 });

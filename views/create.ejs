@@ -1,3 +1,15 @@
-<div class="div">
-    <h1>Create a blog</h1>
+<%- include ("partials/header.ejs") %>
+<div class="blog">
+    <form action="/submit" method="post">
+        <label for="blog-title">Blog Title</label>
+        <input type="text" name="blog-title" required/>
+        <label for="blog-subtitle">Please enter subtitle</label>
+        <input type="text" name="blog-subtitle" required>
+        <label for="blog-description">Show description</label>
+        <textarea name="blog-description" cols="30" rows="10"></textarea>
+        <label for="department"></label>
+        <button type="submit">submit</button>
+    </form>
 </div>
+
+<%- include ("partials/footer.ejs") %>

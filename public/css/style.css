@@ -136,6 +136,20 @@ button:hover {
 
 /* END OF BLOG SECTION */
 
+/* CREATE A BLOG */
+
+.blog {
+  width: 80%;
+  background-color: #dadada;
+}
+
+
+
+
+
+
+/* END OF CREATE A BLOG */
+
 /* FOOTER SECTION */
 footer{
   width: 100%;

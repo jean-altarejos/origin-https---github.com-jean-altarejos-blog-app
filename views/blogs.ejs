@@ -1,0 +1,26 @@
+<%- include ("partials/header.ejs") -%>
+
+<div class="container">
+    <% if(locals.title) { %>
+        <h1><%= title %></h1>
+    <% } else { %>
+        <h1>View Blog</h1>
+    <% } %>
+    <div class="subtitle">
+        <% if(locals.subtitle) { %>
+            <h4><%= subtitle %></h4>
+        <% } else { %>
+            <h4>View Blog</h4>
+        <% } %>
+    </div>
+
+    <div class="content">
+        <% if(locals.content) { %>
+            <p><%= content %></p>
+        <% } else { %>
+            <h1>View Blog</h1>
+        <% } %>
+    </div>
+</div>
+
+<%- include ("partials/footer.ejs") -%>

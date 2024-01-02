@@ -141,11 +141,13 @@ button:hover {
 .blog {
   width: 80%;
   background-color: #dadada;
+  display: block;
 }
 
-
-
-
+.row {
+  display: block;
+  width: 100%;
+}
 
 
 /* END OF CREATE A BLOG */

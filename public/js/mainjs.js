@@ -11,4 +11,14 @@ $(document).ready(function(){
             }
         });
     });
+
+    $('.btnReadMore').on("click",function(){
+        $.ajax({
+            url: "/read-more",
+            type: "get",
+            success: function() {
+                location.href='/read-more';
+            }
+        });
+    })
 });

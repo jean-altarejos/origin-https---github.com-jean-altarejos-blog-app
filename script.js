@@ -5,16 +5,20 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 8080;
 
+var posts = [];
+
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", {posts : posts});
+    
 });
 
 app.get("/create", (req, res) => {
     res.render("create.ejs");
+    
 });
 
 app.get("/read-more", (req, res) => {
@@ -27,11 +31,15 @@ app.get("/read-more", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-    res.render("blogs.ejs", {
+    const post = {
         title: req.body["blog-title"],
         subtitle: req.body["blog-subtitle"],
         content: req.body["blog-content"]
-    });
+    }
+
+    posts.push(post);
+
+    res.redirect("/");
 });
 
 app.listen(port, () => {

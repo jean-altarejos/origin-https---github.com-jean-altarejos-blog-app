@@ -1,6 +1,5 @@
 $(document).ready(function(){
-    
-    
+
     $('.cta').on("click", function(){
         console.log("I am clicked!");
         $.ajax({
@@ -21,4 +20,7 @@ $(document).ready(function(){
             }
         });
     })
+
+    
+    
 });

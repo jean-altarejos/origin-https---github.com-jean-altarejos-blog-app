@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-
+import _ from "lodash";
 
 const app = express();
 const port = 8080;
@@ -29,6 +29,32 @@ app.get("/read-more", (req, res) => {
     };
     res.render("blogs.ejs", data);
 });
+
+
+app.get("/posts/:postName", (req,res) => {
+    const requestedTitle = req.params.postName;
+    const lowerRequest = _.lowerCase(requestedTitle);
+   
+    posts.forEach(function(post){
+        const storedTitle = post.title;
+        const lowerStored = _.lowerCase(storedTitle);
+        if (lowerStored === lowerRequest) {
+            const data = {
+                postTitle : lowerRequest,
+                postSubtitle: post.subtitle,
+                postContent: post.content
+            };
+            res.render("posts.ejs", data);
+            
+        } else {
+            console.log("No match found");
+        }
+    });
+    
+    res.send(req.params);
+});
+
+
 
 app.post("/submit", (req, res) => {
     const post = {

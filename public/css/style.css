@@ -173,6 +173,12 @@ h2 {
   padding: 15px;
 }
 
+p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
 /* END OF CREATE A BLOG */
 
 /* FOOTER SECTION */
